@@ -25,7 +25,7 @@ jobs:
 
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: run building-mod
-        run: ./gradlew prepareRunGameTestServer runGameTestServer --no-daemon
+      - name: building-mod
+        run: ./gradlew clean build
               
 

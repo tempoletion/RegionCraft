@@ -15,22 +15,19 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-steps:
+      - run: echo "🍏 This job's status is ${{ job.status }}.
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: setup Java
+        uses: actions/setup-java@v3
+        with:
+           distribution: temurin
+           java-version: 17
+           cache: gradle
 
-            - name: checkout repository
-              uses: actions/checkout@v3
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
 
-            - name: setup Java
-              uses: actions/setup-java@v3
-              with:
-                  distribution: temurin
-                  java-version: 17
-                  cache: gradle
-
-            - name: make gradle wrapper executable
-              run: chmod +x ./gradlew
-
-            - name: run gametests
-              run: ./gradlew prepareRunGameTestServer runGameTestServer --no-daemon
+      - name: run gametests
+        run: ./gradlew prepareRunGameTestServer runGameTestServer --no-daemon
 

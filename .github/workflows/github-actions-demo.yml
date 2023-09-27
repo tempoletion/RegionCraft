@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: mod building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -16,3 +16,21 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+steps:
+
+            - name: checkout repository
+              uses: actions/checkout@v3
+
+            - name: setup Java
+              uses: actions/setup-java@v3
+              with:
+                  distribution: temurin
+                  java-version: 17
+                  cache: gradle
+
+            - name: make gradle wrapper executable
+              run: chmod +x ./gradlew
+
+            - name: run gametests
+              run: ./gradlew prepareRunGameTestServer runGameTestServer --no-daemon
+

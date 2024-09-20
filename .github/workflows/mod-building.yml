@@ -13,13 +13,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
            java-version: 1.8
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
       - name: Sync cache
       uses: actions/cache@v2
       with:
         path: |
           ~/.gradle
         key: .gradle
-      - name: make gradle wrapper executable
-        run: chmod +x ./gradlew
       - name: building-mod
         run: ./gradlew build

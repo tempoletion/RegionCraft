@@ -15,5 +15,7 @@ jobs:
            java-version: 1.8
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
+      - name: set workspace
+        run: ./gradlew setupCIWorkspace
       - name: building-mod
         run: ./gradlew build

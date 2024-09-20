@@ -19,9 +19,6 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: setup gradle workspace
-        run: ./gradlew setupCIWorkspace
-
       - name: building-mod
         run: ./gradlew build
 

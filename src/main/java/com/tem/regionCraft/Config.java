@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.tem.regionCraft;
 
 import java.io.File;
 

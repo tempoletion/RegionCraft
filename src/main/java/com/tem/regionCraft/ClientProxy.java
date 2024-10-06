@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.tem.regionCraft;
 
 public class ClientProxy extends CommonProxy {
 

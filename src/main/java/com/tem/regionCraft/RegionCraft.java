@@ -10,7 +10,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = MyMod.MODID, version = Tags.VERSION, name = "RegionCraft", acceptedMinecraftVersions = "[1.7.10]")
+@Mod(modid = RegionCraft.regionCraft, version = Tags.VERSION, name = "RegionCraft", acceptedMinecraftVersions = "[1.7.10]")
 public class RegionCraft {
 
     public static final String MODID = "regionCraft";
